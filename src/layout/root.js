@@ -26,7 +26,7 @@ function Root() {
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 5
+            items: 7
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -43,12 +43,12 @@ function Root() {
           
             <NavBar></NavBar>
             <Container fluid className="top-rated-cont mt-5 pt-5" >
-                <h3> Most Pupular This Week</h3>
+                {/* <h3> Most Pupular This Week</h3> */}
             <Carousel responsive={responsive}>
                 {
                     toprated.map((movie) => {
-                        return( <div><img className="img-fluid" src={`https://image.tmdb.org/t/p/w500/` + movie.backdrop_path} alt="" />
-                        <h5 className="p-3"  >{ movie.title }</h5>
+                        return( <div><img className="img-fluid" src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
+                        {/* <h5 className="p-3"  >{ movie.title }</h5> */}
                         {/* <Progress></Progress> */}
                         </div> 
                        
