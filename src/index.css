@@ -1,4 +1,5 @@
 body {
+  color: white;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +11,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.page-container{
+  background-image: url(./imgs/w80-wallpaper-gif.gif);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.lay-out{
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+background-color: black;
+width: 100%;
+opacity: .3;
 }
