@@ -2,22 +2,12 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios"
  export  const FetchTopRated = createAsyncThunk(
   "top/topRated", async (url) => {
- return   await axios.get('https://api.themoviedb.org/3/movie/top_rated?api_key=739517d93a0252fbc4ca80b8cf937f64&language=en-US&page=1')
+ return    axios.get(url)
       .then((res) => {
         return  (res.data.results)
       })
   }
 )
-
-// createAsyncThunk("movies/allmovies", async (url) => {
-
-//   return (  await  axios
-//     .get(`https://api.themoviedb.org/3/movie/popular?api_key=739517d93a0252fbc4ca80b8cf937f64&language=en-US&page=1`)
-//     .then((res) => {
-//       return (res.data)
-//     }))
-//   })
-
 const initialState = {
   loading: false,
   movies: [],
@@ -38,7 +28,7 @@ const topRatedSlice = createSlice(
       builder.addCase(FetchTopRated.fulfilled, (state, action) => {
         state.loading = false
         state.movies = action.payload
-        console.log(action.payload)
+   
       })
 
 

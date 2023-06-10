@@ -6,20 +6,15 @@ import { FetchTopRated } from "../reducers/topRateedReducer"
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Link, Outlet } from "react-router-dom";
-import LayCarousel from "./carousel";
-function Root() {
+function LayCarousel({url}) {
     const toprated = useSelector((state) => state.topRated.movies)
     const dispatch = useDispatch()
-    // useEffect(() => {
-    //     dispatch(
-    //         FetchTopRated()
-    //     )
-    // }, [dispatch])
-    // useEffect(() => {
-    //     dispatch(
-    //         FetchTopRated('https://api.themoviedb.org/3/movie/popular?api_key=739517d93a0252fbc4ca80b8cf937f64&language=en-US&page=1')
-    //     )
-    // }, [dispatch])
+    useEffect(() => {
+     
+        dispatch(
+            FetchTopRated(url)
+        )
+    }, [dispatch])
     const responsive = {
         superLargeDesktop: {
 
@@ -39,21 +34,12 @@ function Root() {
             items: 2
         }
     }
-    return (
-        <Container className="p-0 page-container" fluid  > 
-            <NavBar></NavBar>
-            <Container fluid className="top-rated-cont mt-5 pt-5" >
-                {/* <h3> Most Pupular This Week</h3> */}
-                <LayCarousel responsive={responsive} 
-        url={'https://api.themoviedb.org/3/movie/popular?api_key=739517d93a0252fbc4ca80b8cf937f64&language=en-US&page=1'} >
+    return (  
 
-        </LayCarousel>
-        <LayCarousel responsive={responsive} 
-        url={'https://api.themoviedb.org/3/movie/top_rated?api_key=739517d93a0252fbc4ca80b8cf937f64&language=en-US&page=1'} >
-        </LayCarousel>
-        
-      
-            {/* <Carousel responsive={responsive}>
+
+        <Container fluid className="top-rated-cont mt-5 pt-5" >
+                {/* <h3> Most Pupular This Week</h3> */}
+            <Carousel responsive={responsive}> 
                 {
                     toprated.map((movie) => {
                         return( <div key={movie.id} ><img className="img-fluid" src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
@@ -64,11 +50,9 @@ function Root() {
                         )
                     })
                 }
-            </Carousel>; */}
+            </Carousel>;
             </Container>
-            {/* <Outlet></Outlet> */}
-        </Container>
     );
 }
 
-export default Root;
+export default LayCarousel;
