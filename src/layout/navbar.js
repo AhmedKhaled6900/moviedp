@@ -25,14 +25,14 @@ function ColorSchemesExample() {
 
 <NavDropdown.Item >
 
-<Link to ="movies" className='nav-link fw-bold  text-center  ' > 
+<Link to ="movies" className='fw-bold  text-center  ' > 
 POPULAR
 </Link>
 </NavDropdown.Item>
 
 <NavDropdown.Item >
 
-<Link to ="topRated" className='nav-link fw-bold  text-center  ' > 
+<Link to ="topRated" className=' fw-bold  text-center  ' > 
 TOP RATED
 </Link>
 </NavDropdown.Item>

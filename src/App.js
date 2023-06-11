@@ -7,6 +7,7 @@ import PopularMovies from './layout/moviescomponent';
 import PopularCarousel from './layout/popularcarousel';
 import LayCarousel from './layout/carousel';
 import Home from './layout/home';
+import TopRatedMovies from './layout/topratedcomponent';
 
 
 
@@ -22,19 +23,30 @@ function App() {
       element: <Home></Home>
       
     },
+
     {
       path :"movies",
-      element: <PopularMovies></PopularMovies>
+      element: <PopularMovies></PopularMovies>},
+
+     
+{        path:"topRated",
+element:<TopRatedMovies></TopRatedMovies>
+},
+{
+  path:"Moviedetails/:id",
+  element:<DetailsComponent></DetailsComponent>
+}
+  
       
-    },
+   
   ],
 },
 
 
-// {
-//   path:"Moviedetails/:id",
-//   element:<DetailsComponent></DetailsComponent>
-// }
+{
+  path:"Moviedetails/:id",
+  element:<DetailsComponent></DetailsComponent>
+}
   ])
   return (
 

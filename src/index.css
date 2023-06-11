@@ -14,10 +14,11 @@ code {
 }
 
 .page-container{
-  background-image: url(./imgs/w80-wallpaper-gif.gif);
-  height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
+  /* background-image: url(./imgs/w80-wallpaper-gif.gif); */
+  /* height: 100vh; */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  background-color: black;
 }
 .lay-out{
 position: absolute;
@@ -55,3 +56,16 @@ color: floralwhite;
 .dropdown-menu{
   background-color: black !important;
 }
+.card-container {
+  box-shadow: 0 0 .2rem;
+  border-radius: 10px;
+}
+.card-container h5 {
+color: floralwhite;}
+.card-container p {
+color: rgba(255, 255, 255, 0.55);}
+.card-container img {
+ height: 100%;
+  width: 100%;
+}
+

@@ -36,7 +36,7 @@ function Root() {
     return (
         <Container className="p-0 page-container" fluid  > 
             <NavBar></NavBar>
-            <Container fluid className="top-rated-cont mt-5 pt-5" >
+            <Container fluid className="" >
 
                 {/* <Home></Home> */}
                 {/* <h3> Most Pupular This Week</h3> */}

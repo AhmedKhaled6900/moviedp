@@ -18,7 +18,6 @@ function DetailsComponent() {
     // `https://image.tmdb.org/t/p/w500/`+ data.backdrop_path
     return (
         <Container fluid className="p-0 m-0 animate__animated animate__fadeIn animate__delay-.5s">
-            <NavBar></NavBar>
             <Container
                 fluid
                 className="p-0 m-0 lay-con position-relative"
