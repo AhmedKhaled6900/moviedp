@@ -19,7 +19,7 @@ function ColorSchemesExample() {
 
 
 
-          <NavDropdown className='fw-bold'  title="MOVIES" id="basic-nav-dropdown">
+          <NavDropdown className='fw-bold'  title="MOVIES" id="nav-dropdown">
 
           
 

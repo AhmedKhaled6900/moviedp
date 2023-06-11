@@ -23,30 +23,33 @@ function App() {
       element: <Home></Home>
       
     },
+    {
+      
+        path:"moviedetails/:id",
+        element:<DetailsComponent></DetailsComponent>
+      
+    },
 
     {
       path :"movies",
-      element: <PopularMovies></PopularMovies>},
+      element: <PopularMovies></PopularMovies>,
+    },
 
      
 {        path:"topRated",
 element:<TopRatedMovies></TopRatedMovies>
-},
-{
-  path:"Moviedetails/:id",
-  element:<DetailsComponent></DetailsComponent>
 }
+
   
-      
    
   ],
 },
 
 
-{
-  path:"Moviedetails/:id",
-  element:<DetailsComponent></DetailsComponent>
-}
+// {
+//   path:"Moviedetails/:id",
+//   element:<DetailsComponent></DetailsComponent>
+// }
   ])
   return (
 
