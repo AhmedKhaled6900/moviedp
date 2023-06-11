@@ -52,3 +52,6 @@ opacity: .3;
 .details{
 color: floralwhite;
 }
+.dropdown-menu{
+  background-color: black !important;
+}

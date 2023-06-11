@@ -1,10 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { createSlice } from "@reduxjs/toolkit";
-export const Popular = createAsyncThunk("movies/popular",async()=>{
-    return axios.get('https://api.themoviedb.org/3/movie/popular?language=en-US&page=1')
+export const Popular = createAsyncThunk("movies/popular",async(url)=>{
+    return axios.get('https://api.themoviedb.org/3/movie/popular?api_key=739517d93a0252fbc4ca80b8cf937f64&language=en-US&page=1'
+    )
     .then((res)=>{
-        return res.data
+        return res.data.results
     })
 })
 
@@ -16,7 +17,7 @@ const initialState = {
   }
 
   const PopularSlice=createSlice({
-    name:"moviedetails",
+    name:"popular",
     initialState,
     extraReducers:(builder)=>{
        builder.addCase(Popular.fulfilled,(state,action)=>{

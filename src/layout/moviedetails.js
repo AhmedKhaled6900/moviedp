@@ -17,7 +17,7 @@ function DetailsComponent() {
     }, [id]);
     // `https://image.tmdb.org/t/p/w500/`+ data.backdrop_path
     return (
-        <Container fluid className="p-0 m-0">
+        <Container fluid className="p-0 m-0 animate__animated animate__fadeIn animate__delay-.5s">
             <NavBar></NavBar>
             <Container
                 fluid
@@ -27,7 +27,7 @@ function DetailsComponent() {
                 }}
             >
                 <Row className="pt-5 w-100">
-                    <Col className="col-6 z-2 ">
+                    <Col className="col-6 z-2  animate__animated animate__fadeIn animate__delay-1s ">
                         <div className="backdrop">
                             <img
                                 className="img-fluid"

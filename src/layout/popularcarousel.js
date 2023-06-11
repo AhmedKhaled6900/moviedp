@@ -1,16 +1,20 @@
 import Container from "react-bootstrap/esm/Container";
+import NavBar from "./navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { FetchTopRated } from "../reducers/topRateedReducer"
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Link } from "react-router-dom";
-function LayCarousel() {
-    const toprated = useSelector((state) => state.topRated.movies)
+import { Link, Outlet } from "react-router-dom";
+import { Popular } from "../reducers/store/popularreducer";
+function PopularCarousel({loader}) {
+    const popular = useSelector((state) => state.popular.movies)
+
     const dispatch = useDispatch()
     useEffect(() => {
+     
         dispatch(
-            FetchTopRated()
+Popular()
         )
     }, [dispatch])
     const responsive = {
@@ -33,11 +37,13 @@ function LayCarousel() {
         }
     }
     return (  
-        <Container fluid className="top-rated-cont mt-5 pt-5" >
+
+
+        <Container fluid className="popular-cont mt-5 pt-5" >
                 {/* <h3> Most Pupular This Week</h3> */}
             <Carousel responsive={responsive}> 
                 {
-                    toprated.map((movie) => {
+                    popular.map((movie) => {
                         return( <div key={movie.id} ><img className="img-fluid" src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
                        <Link to={`Moviedetails/${movie.id}`}>
                        <h6 className="p-3"  >{ movie.title }</h6>
@@ -51,4 +57,4 @@ function LayCarousel() {
     );
 }
 
-export default LayCarousel;
+export default PopularCarousel;

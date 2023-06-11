@@ -7,19 +7,13 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Link, Outlet } from "react-router-dom";
 import LayCarousel from "./carousel";
+import { Popular } from "../reducers/store/popularreducer";
+import PopularCarousel from "./popularcarousel";
+import Home from "./home";
 function Root() {
     const toprated = useSelector((state) => state.topRated.movies)
     const dispatch = useDispatch()
-    // useEffect(() => {
-    //     dispatch(
-    //         FetchTopRated()
-    //     )
-    // }, [dispatch])
-    // useEffect(() => {
-    //     dispatch(
-    //         FetchTopRated('https://api.themoviedb.org/3/movie/popular?api_key=739517d93a0252fbc4ca80b8cf937f64&language=en-US&page=1')
-    //     )
-    // }, [dispatch])
+
     const responsive = {
         superLargeDesktop: {
 
@@ -43,14 +37,15 @@ function Root() {
         <Container className="p-0 page-container" fluid  > 
             <NavBar></NavBar>
             <Container fluid className="top-rated-cont mt-5 pt-5" >
+
+                {/* <Home></Home> */}
                 {/* <h3> Most Pupular This Week</h3> */}
-                <LayCarousel responsive={responsive} 
+                {/* <LayCarousel responsive={responsive} 
         url={'https://api.themoviedb.org/3/movie/popular?api_key=739517d93a0252fbc4ca80b8cf937f64&language=en-US&page=1'} >
 
-        </LayCarousel>
-        <LayCarousel responsive={responsive} 
-        url={'https://api.themoviedb.org/3/movie/top_rated?api_key=739517d93a0252fbc4ca80b8cf937f64&language=en-US&page=1'} >
-        </LayCarousel>
+        </LayCarousel> */}
+  
+
         
       
             {/* <Carousel responsive={responsive}>
@@ -66,7 +61,7 @@ function Root() {
                 }
             </Carousel>; */}
             </Container>
-            {/* <Outlet></Outlet> */}
+            <Outlet></Outlet>
         </Container>
     );
 }
