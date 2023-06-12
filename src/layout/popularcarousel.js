@@ -7,23 +7,41 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Link, Outlet } from "react-router-dom";
 import { Popular } from "../reducers/store/popularreducer";
-// import Button from "react-bootstrap/esm/Button";
 import { Button, ButtonGroup, ButtonToolbar, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import { useState } from "react";
+import { FetchPopularTv } from "../reducers/store/tvReducers/popularTvReducer";
 function PopularCarousel({loader}) {
+    const [theMovie,setTheMovie]=useState([])
+
+
     const popular = useSelector((state) => state.popular.movies)
 const topRated= useSelector((state)=> state.topRated.movies)
- const [theMovie,setTheMovie]=useState([])
+const populartv=useSelector((state)=>state.popularTv.movies)
+console.log(topRated)
+console.log(populartv)
 
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(Popular())
+        dispatch(
+FetchPopularTv()
+        )
+
 
     }, [dispatch])
-    useEffect(()=>{
+    useEffect(() => {
+        dispatch(
+Popular()
+        )
+
+
+    }, [dispatch])
+    useEffect(() => {
+  
         setTheMovie(popular)
-console.log(popular)
-    },[popular])
+        setMovieTitle("MOVIES")
+
+    }, [popular])
+
     const responsive = {
         superLargeDesktop: {
 
@@ -43,6 +61,8 @@ console.log(popular)
             items: 2
         }
     }
+const [moviesTitle,setMovieTitle]=useState("")
+
     const [activeButton, setActiveButton] = useState('');
 const handleFetchPopular =(button)=>{
     setActiveButton(button);
@@ -52,40 +72,76 @@ const handleFetchPopular =(button)=>{
       btn.classList.remove("active")
     });
     button.target.classList.add("active")
-setTheMovie(popular)
 
-    // dispatch(Popular())
+
+    dispatch(Popular())
+
+    setTheMovie(popular)
+    setMovieTitle("MOVIES")
+
+
 }
-const handleFetchTopRated =(button)=>{
+
+
+// const handleFetchTopRated =(button)=>{
+
+//     setActiveButton(button);
+//     const buttons = document.querySelectorAll('.popular-cont .btn');
+//     buttons.forEach((btn) => {
+//       btn.classList.remove("active")
+//     });
+//     button.target.classList.add("active")
+ 
+//     setTheMovie(topRated)
+// }
+
+const handleFetchpopularTv =(button)=>{
 
     setActiveButton(button);
     const buttons = document.querySelectorAll('.popular-cont .btn');
-    console.log(buttons)
     buttons.forEach((btn) => {
       btn.classList.remove("active")
     });
     button.target.classList.add("active")
-    // dispatch(FetchTopRated())
-    setTheMovie(topRated)
-
+ 
+    setTheMovie(populartv)
+    setMovieTitle("TV SHOW")
 }
 
        return (  
 
 
-        <Container fluid className="popular-cont mt-5 pt-5 " >
+        <Container fluid className="popular-cont mt-5 pt-5" >
+<div className="d-flex tabs-container ">
 
 
-<div className="btns-container d-flex  ">
-<Button   active={true} onClick={(  (handleFetchPopular)  )} >Popular </Button>
-<Button  active={false } onClick={ (  (handleFetchTopRated)  )}>Top Rated </Button>
+{
+moviesTitle==="MOVIES"?  <Link to="movies">
+
+<h6 className="f-light"> MOST POPULAR  {moviesTitle}</h6> 
+
+    </Link>
+    :<Link to="TvShows">
+
+    <h6 className="f-light"> MOST POPULAR  {moviesTitle}</h6> 
+    
+        </Link>
+}
+
+
+<div className="btns-container  ">
+ 
+<Button className="d-flex  animate__animated animate__fadeIn animate__delay-.1s "  active={true} onClick={(  (handleFetchPopular)  )} >MOVIES </Button>
+<Button  className="d-flex  animate__animated animate__fadeIn animate__delay-.1s " active={false } onClick={ (  (handleFetchpopularTv)  )}>TV SHOWS </Button>
 
  
     </div>
+</div>
+
             <Carousel responsive={responsive}> 
                 {
                     theMovie.map((movie) => {
-                        return( <div key={movie.id} className="animate__animated animate__fadeIn animate__delay-.5s" ><img className="img-fluid " src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
+                        return( <div className="d-flex  animate__animated animate__fadeIn animate__delay-.1s " key={movie.id} ><img className="img-fluid" src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
                        <Link to={`Moviedetails/${movie.id}`}>
                        <h6 className="p-3"  >{ movie.title }</h6>
                        </Link>

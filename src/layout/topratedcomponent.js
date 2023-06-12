@@ -12,7 +12,6 @@ function TopRatedMovies() {
 
     const dispath=useDispatch()
     const data =useSelector((state)=>state.topRated.movies)
-    console.log(data)
     useEffect(()=>{
         dispath(FetchTopRated() )
     },[])

@@ -120,3 +120,8 @@ outline: none;
 border-radius: 25px;
 
 }
+.tabs-container{
+  justify-content: space-between;
+  align-items: baseline;
+}
+
