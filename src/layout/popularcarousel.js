@@ -105,34 +105,34 @@ const handleFetchpopularTv =(button)=>{
     button.target.classList.add("active")
  
     setTheMovie(populartv)
-    setMovieTitle("TV SHOW")
+    setMovieTitle("TV ")
 }
 
        return (  
 
 
-        <Container fluid className="popular-cont mt-5 pt-5" >
+        <Container fluid className="popular-cont mt-5 " >
 <div className="d-flex tabs-container ">
 
 
 {
 moviesTitle==="MOVIES"?  <Link to="movies">
 
-<h6 className="f-light"> MOST POPULAR  {moviesTitle}</h6> 
+<h6 className="f-light m-2 m-lg-4 ">  POPULAR  {moviesTitle}</h6> 
 
     </Link>
     :<Link to="TvShows">
 
-    <h6 className="f-light"> MOST POPULAR  {moviesTitle}</h6> 
+    <h6 className="f-light m-lg-4 m-2 ">  POPULAR  {moviesTitle}</h6> 
     
         </Link>
 }
 
 
-<div className="btns-container  ">
+<div className="btns-container   m-lg-4 m-2 ">
  
 <Button className="d-flex  animate__animated animate__fadeIn animate__delay-.1s "  active={true} onClick={(  (handleFetchPopular)  )} >MOVIES </Button>
-<Button  className="d-flex  animate__animated animate__fadeIn animate__delay-.1s " active={false } onClick={ (  (handleFetchpopularTv)  )}>TV SHOWS </Button>
+<Button  className="d-flex  animate__animated animate__fadeIn animate__delay-.1s " active={false } onClick={ (  (handleFetchpopularTv)  )}>TV  </Button>
 
  
     </div>
@@ -141,10 +141,10 @@ moviesTitle==="MOVIES"?  <Link to="movies">
             <Carousel responsive={responsive}> 
                 {
                     theMovie.map((movie) => {
-                        return( <div className="d-flex  animate__animated animate__fadeIn animate__delay-.1s " key={movie.id} ><img className="img-fluid" src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
-                       <Link to={`Moviedetails/${movie.id}`}>
+                        return( <div className=" " key={movie.id} ><img className="img-fluid" src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
+                       {<Link to={`Moviedetails/${movie.id}`}>
                        <h6 className="p-3"  >{ movie.title }</h6>
-                       </Link>
+                       </Link>}
                         </div>                       
                         )
                     })
