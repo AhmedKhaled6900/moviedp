@@ -73,4 +73,50 @@ color: rgba(255, 255, 255, 0.55);}
   min-height: 100%;
   border-radius: 10px;
 }
+a {
+  text-decoration: none !important;
+  color :white !important;
+}
+/* .navbar li:hover{
+  background-color: black !important;
+} */
+.dropdown-item:hover{
+  background-color: black !important;
+}
+.popular-cont{
+  background-color: #222a33;
+}
+.top-rated-cont{
+  background-color: #222a33;
+  
+}
+.popular-cont .btn{
+background-color: black !important;
+border: none !important;
+outline: none !important;
+font-weight: bolder;
+border-radius: 25px;
 
+}
+.popular-cont .btn.active{
+background-color: white !important;
+color: black;
+
+}
+.popular-cont .btn.active:hover{
+background-color: white !important;
+color: black;
+
+}
+.popular-cont .btn:hover {
+background-color: black !important;
+border: none;
+outline: none;
+}
+.btns-container{
+  display: flex!important;
+    width: fit-content;
+    background-color: black;
+border-radius: 25px;
+
+}

@@ -6,42 +6,24 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function ColorSchemesExample() {
   return (
-
-
-
 <Navbar className='p-3' bg="dark" variant="dark">
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+  <Link to="/" >
+  <Navbar.Brand className='fw-bolder'  >MOVIE DB  </Navbar.Brand>
 
-
-
+  </Link>
           <Nav className="ms-auto">
-
-
-
-
           <NavDropdown className='fw-bold'  title="MOVIES" id="nav-dropdown">
-
-          
-
 <NavDropdown.Item >
-
 <Link to ="movies" className='fw-bold  text-center  ' > 
 POPULAR
 </Link>
 </NavDropdown.Item>
-
 <NavDropdown.Item >
-
 <Link to ="topRated" className=' fw-bold  text-center  ' > 
 TOP RATED
 </Link>
 </NavDropdown.Item>
-
-
             </NavDropdown>
-
-       
-     
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>

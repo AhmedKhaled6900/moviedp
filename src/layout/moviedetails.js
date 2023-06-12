@@ -39,16 +39,11 @@ function DetailsComponent() {
                             <h5> {data.title}</h5>
                             <p> {data.release_date} </p>
                             <h6> {data.popularity} </h6>
-                            {/* <img className=" img-fluid" src= {`https://image.tmdb.org/t/p/w500/` + data.poster_path} alt="" /> */}
                         </div>
                     </Col>
                 </Row>
                 <div className="lay "></div>
                 <div>
-                    <div>
-                        {/* <img src=  { `https://image.tmdb.org/t/p/w500/`+ data.backdrop_path }  alt="" />    */}
-                    </div>
-
                     <Outlet></Outlet>
                 </div>
             </Container>

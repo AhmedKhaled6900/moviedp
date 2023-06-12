@@ -22,18 +22,11 @@ return (<Col lg={3} className='gap-1 mb-2' key={movie.id}>
     <div className='col-4  col-lg-12   p-0' >
 <Link to={`/moviedetails/${movie.id}`} >
 <img className=' ' src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
-
 </Link>
-
-
-
 </div>
 <div className='col-8 info-container col-lg-12 pt-3'>
-
 <Link to={`/moviedetails/${movie.id}`} >
 <h5 className=' '  >{movie.title}</h5>
-
-
 </Link>
         <p>{movie.release_date}</p>
         <div className='d-flex '>
@@ -50,11 +43,8 @@ return (<Col lg={3} className='gap-1 mb-2' key={movie.id}>
         })
     }
 </Row>
-
-
-
 </Container>
-     );
+);
 
 }
 
