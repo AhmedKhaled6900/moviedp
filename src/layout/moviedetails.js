@@ -6,18 +6,25 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Outlet, useParams } from "react-router-dom";
 import Container from "react-bootstrap/esm/Container";
+import Loader from "./loader";
 
 function DetailsComponent() {
     const { id } = useParams();
     const dispatch = useDispatch();
     const data = useSelector((state) => state.details.movies);
+const loading=useSelector((state)=>state.details.loading)
+
     console.log(data);
     useEffect(() => {
         dispatch(MovieDetails(id));
     }, [id]);
     return (
         <Container fluid className="p-0 m-0 animate__animated animate__fadeIn animate__delay-.5s">
-            <Container
+
+            {
+                loading?
+                
+                <Loader></Loader>:    <Container
                 fluid
                 className="p-0 m-0 lay-con position-relative"
                 style={{
@@ -47,6 +54,8 @@ function DetailsComponent() {
                     <Outlet></Outlet>
                 </div>
             </Container>
+            }
+        
         </Container>
     );
 }

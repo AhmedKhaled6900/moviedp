@@ -12,7 +12,7 @@ function ColorSchemesExample() {
 
   </Link>
           <Nav className="ms-lg-auto me-lg-auto">
-          <NavDropdown className='fw-bold'  title="MOVIES" id="nav-dropdown">
+          <NavDropdown className='fw-bold mx-lg-2'  title="MOVIES" id="nav-dropdown">
 <NavDropdown.Item >
 <Link to ="movies" className='fw-bold  text-center  ' > 
 POPULAR
@@ -24,7 +24,7 @@ TOP RATED
 </Link>
 </NavDropdown.Item>
             </NavDropdown>
-          <NavDropdown className='fw-bold dropitem '  title="TV" id="nav-dropdown ">
+          <NavDropdown className='fw-bold dropitem   mx-lg-2'  title="TV" id="nav-dropdown ">
 <NavDropdown.Item className='' >
 <Link to ="TvShows" className='fw-bold  text-center  ' > 
 POPULAR

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 
@@ -7,18 +7,30 @@ import Col from "react-bootstrap/Col";
 import { Outlet, useParams } from "react-router-dom";
 import Container from "react-bootstrap/esm/Container";
 import { FetchTvDetails } from "../../reducers/store/tvReducers/tvdetailsreducer";
+import Loader from "../loader";
 
 function TVDetailsComponent() {
+    // const[loading,setLoading]=useState()
+
     const { id } = useParams();
     const dispatch = useDispatch();
     const data = useSelector((state) => state.tvDetails.movies);
-    console.log(data);
+  const loading=useSelector((state)=>state.tvDetails.loading)
+    console.log(loading);
     useEffect(() => {
         dispatch(FetchTvDetails(id));
     }, [id]);
-    return (
+    return ( 
+
+
+   
+
         <Container fluid className="p-0 m-0 animate__animated animate__fadeIn animate__delay-.5s">
-            <Container
+
+
+            {
+                loading?<Loader></Loader>:
+                <Container
                 fluid
                 className="p-0 m-0 lay-con position-relative"
                 style={{
@@ -48,7 +60,13 @@ function TVDetailsComponent() {
                     <Outlet></Outlet>
                 </div>
             </Container>
-        </Container>
+            }
+     
+    </Container>
+  
+
+        
+
     );
 }
 

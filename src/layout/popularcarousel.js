@@ -97,7 +97,7 @@ function PopularCarousel({ loader }) {
  moviesTitle === "MOVIES" ?
 
                     theMovie.map((movie) => {
-                        return (<div className=" " key={movie.id} >
+                        return (<div className="animate__animated animate__fadeIn animate__delay-.5s " key={movie.id} >
                             
                             <Link to={`Moviedetails/${movie.id}`}>
                             <img className="img-fluid" src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
@@ -110,7 +110,7 @@ function PopularCarousel({ loader }) {
                         </div>
                         )
                     }):  theMovie.map((movie) => {
-                        return (<div className=" " key={movie.id} >
+                        return (<div className="animate__animated animate__fadeIn animate__delay-.5s " key={movie.id} >
                             
                             <Link to={`tv/${movie.id}`}>
                             <img className="img-fluid" src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />

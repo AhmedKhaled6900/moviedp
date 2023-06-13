@@ -142,3 +142,77 @@ border-radius: 25px;
 .dropdown-menu {
   left: -60% !important;
 }
+ /*   Loader Component */
+.Bounce{
+  width: 25px;
+    height: 25px;
+    margin: 0  auto;
+    background-color: white;
+    border-radius: 50%;
+     position: absolute; 
+     top: 50%;
+    left: 50%; 
+    animation: Bounce 0.5s cubic-bezier(.19,.57,.3,.98) infinite alternate;
+    box-shadow: 0 0 .5rem white;
+
+}
+
+.right{
+  animation: right 0.5s cubic-bezier(.19,.57,.3,.98) infinite alternate; 
+}
+.top{
+  animation: top 0.5s cubic-bezier(.19,.57,.3,.98) infinite alternate;
+}
+.bottom{
+  animation: bottom 0.5s cubic-bezier(.19,.57,.3,.98) infinite alternate;
+}
+.left{
+  animation: left 0.5s cubic-bezier(.19,.57,.3,.98) infinite alternate;
+
+}
+.threed{
+  animation: threed 0.5s cubic-bezier(.19,.57,.3,.98) infinite alternate;
+
+}
+@keyframes top { from {
+  transform: translateY(0);
+  }
+  to{
+    transform: translateY(50px);
+  }
+  }
+@keyframes right { from {
+transform: translateX(0);
+}
+to{
+  transform: translateX(50px);
+}
+}
+@keyframes bottom { from {
+transform: translateY(0);
+}
+to{
+  transform: translateY(-50px);
+}
+}
+@keyframes left { from {
+transform: translateX(0);
+}
+to{
+  transform: translateX(-50px);
+}
+}
+
+@keyframes threed { from {
+transform: scale(0);
+}
+to{
+  transform: scale(10px,10px);
+}
+}
+.bounce-container{
+  position: absolute;
+  background-color: black;
+  height: 100%;
+}
+ /*   Loader Component */

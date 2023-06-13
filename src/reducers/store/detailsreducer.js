@@ -21,9 +21,15 @@ const initialState = {
  name:"moviedetails",
  initialState,
  extraReducers:(builder)=>{
+    builder.addCase(MovieDetails.pending,(state,action)=>{
+        state.loading=true
+
+        
+    })
     builder.addCase(MovieDetails.fulfilled,(state,action)=>{
         state.movies=action.payload
-        console.log(action.payload)
+        state.loading=false
+
     })
  }
   })
