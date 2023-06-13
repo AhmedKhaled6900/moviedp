@@ -11,7 +11,7 @@ function ColorSchemesExample() {
   <Navbar.Brand className='fw-bolder'  >MOVIE DB  </Navbar.Brand>
 
   </Link>
-          <Nav className="ms-auto">
+          <Nav className="ms-lg-auto me-lg-auto">
           <NavDropdown className='fw-bold'  title="MOVIES" id="nav-dropdown">
 <NavDropdown.Item >
 <Link to ="movies" className='fw-bold  text-center  ' > 
@@ -24,8 +24,8 @@ TOP RATED
 </Link>
 </NavDropdown.Item>
             </NavDropdown>
-          <NavDropdown className='fw-bold'  title="TV" id="nav-dropdown">
-<NavDropdown.Item >
+          <NavDropdown className='fw-bold dropitem '  title="TV" id="nav-dropdown ">
+<NavDropdown.Item className='' >
 <Link to ="TvShows" className='fw-bold  text-center  ' > 
 POPULAR
 </Link>
@@ -36,8 +36,6 @@ TOP RATED
 </Link>
 </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
 
       </Navbar>

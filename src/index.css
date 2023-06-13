@@ -139,3 +139,6 @@ border-radius: 25px;
 .top-rated-com{
 
 }
+.dropdown-menu {
+  left: -60% !important;
+}
