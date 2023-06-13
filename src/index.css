@@ -83,14 +83,17 @@ a {
 .dropdown-item:hover{
   background-color: black !important;
 }
-.popular-cont{
+.popular-cont,
+.top-rated-com{
   background-color: #222a33;
 }
 .top-rated-cont{
   background-color: #222a33;
   
 }
-.popular-cont .btn{
+.popular-cont .btn,
+.top-rated-com .btn
+{
 background-color: black !important;
 border: none !important;
 outline: none !important;
@@ -98,7 +101,9 @@ font-weight: bolder;
 border-radius: 25px;
 
 }
-.popular-cont .btn.active{
+.popular-cont .btn.active,
+.top-rated-com .btn.active
+{
 background-color: white !important;
 color: black;
 
@@ -108,7 +113,13 @@ background-color: white !important;
 color: black;
 
 }
-.popular-cont .btn:hover {
+.top-rated-com  .btn.active:hover{
+background-color: white !important;
+color: black;
+
+}
+.popular-cont .btn:hover,
+.top-rated-com .btn:hover  {
 background-color: black !important;
 border: none;
 outline: none;
@@ -125,3 +136,6 @@ border-radius: 25px;
   align-items: baseline;
 }
 
+.top-rated-com{
+
+}

@@ -17,7 +17,9 @@ function PopularMovies() {
 <Row>
     {
         data.map((movie)=>{
-return (<Col lg={3} className='gap-1 mb-2' key={movie.id}>
+return (
+
+<Col lg={3} className='gap-1 mb-2' key={movie.id}>
     <div className='row card-container  m-2' >
     <div className='col-4  col-lg-12   p-0' >
 <Link to={`/moviedetails/${movie.id}`} >
@@ -39,7 +41,9 @@ return (<Col lg={3} className='gap-1 mb-2' key={movie.id}>
         </div>
     </div>
     </div>
-    </Col>)
+    </Col>
+    
+    )
         })
     }
 </Row>

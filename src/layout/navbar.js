@@ -24,6 +24,18 @@ TOP RATED
 </Link>
 </NavDropdown.Item>
             </NavDropdown>
+          <NavDropdown className='fw-bold'  title="TV" id="nav-dropdown">
+<NavDropdown.Item >
+<Link to ="TvShows" className='fw-bold  text-center  ' > 
+POPULAR
+</Link>
+</NavDropdown.Item>
+<NavDropdown.Item >
+<Link to ="topRatedTv" className=' fw-bold  text-center  ' > 
+TOP RATED
+</Link>
+</NavDropdown.Item>
+            </NavDropdown>
             <Nav.Link href="#features">Features</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>

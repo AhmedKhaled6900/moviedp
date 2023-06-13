@@ -1,22 +1,17 @@
 import { useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import Container from 'react-bootstrap/esm/Container';
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import { FetchTopRated } from '../reducers/topRateedReducer';
 import { Link } from 'react-router-dom';
-import CardComponent from './cardcomponent';
+import { FetchPopularTv } from '../../reducers/store/tvReducers/popularTvReducer';
 
-function TopRatedMovies() {
-
+function PopularTvShows() {
     const dispath=useDispatch()
-    const data =useSelector((state)=>state.topRated.movies)
+    const data =useSelector((state)=>state.popularTv.movies)
     useEffect(()=>{
-        dispath(FetchTopRated() )
+        dispath(FetchPopularTv() )
     },[])
-
     return ( 
 <Container>
 <Row>
@@ -24,19 +19,18 @@ function TopRatedMovies() {
         data.map((movie)=>{
 return (
 
-
 <Col lg={3} className='gap-1 mb-2' key={movie.id}>
     <div className='row card-container  m-2' >
     <div className='col-4  col-lg-12   p-0' >
-<Link to={`/moviedetails/${movie.id}`} >
+<Link to={`/tv/${movie.id}`} >
 <img className=' ' src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
 </Link>
 </div>
 <div className='col-8 info-container col-lg-12 pt-3'>
-<Link to={`/moviedetails/${movie.id}`} >
-<h5 className=' '  >{movie.title}</h5>
+<Link to={`/tv/${movie.id}`} >
+<h5 className=' '  >{movie.name}</h5>
 </Link>
-        <p>{movie.release_date}</p>
+        <p>{movie.first_air_date}</p>
         <div className='d-flex '>
     <h5 className='pe-2'  >  {movie.vote_count}</h5>  <p> Total Votes</p>  
         </div>
@@ -48,15 +42,14 @@ return (
     </div>
     </div>
     </Col>
-
+    
     )
         })
     }
 </Row>
-
-
-
 </Container>
-     );
+);
+
 }
-export default TopRatedMovies;
+
+export default PopularTvShows;

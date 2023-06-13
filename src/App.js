@@ -8,6 +8,9 @@ import PopularCarousel from './layout/popularcarousel';
 import LayCarousel from './layout/carousel';
 import Home from './layout/home';
 import TopRatedMovies from './layout/topratedcomponent';
+import PopularTvShows from './layout/tvcomponents/popularTvComponent';
+import TopRatedTvShows from './layout/tvcomponents/topRatedTvComponent';
+import TVDetailsComponent from './layout/tvcomponents/tvdetails';
 
 
 
@@ -31,6 +34,11 @@ function App() {
     },
 
     {
+path:"tv/:id",
+element:<TVDetailsComponent></TVDetailsComponent>
+    },
+
+    {
       path :"movies",
       element: <PopularMovies></PopularMovies>,
     },
@@ -38,9 +46,17 @@ function App() {
      
 {        path:"topRated",
 element:<TopRatedMovies></TopRatedMovies>
-}
+},
 
-  
+  {
+
+    path:"TvShows",
+    element:<PopularTvShows/>
+  },
+  {
+    path:"topRatedTv",
+    element:<TopRatedTvShows></TopRatedTvShows>
+  }
    
   ],
 },

@@ -1,5 +1,4 @@
 import Container from "react-bootstrap/esm/Container";
-import NavBar from "./navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { FetchTopRated } from "../reducers/topRateedReducer"
@@ -7,31 +6,28 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Link, Outlet } from "react-router-dom";
 import { Popular } from "../reducers/store/popularreducer";
-import { Button, ButtonGroup, ButtonToolbar, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useState } from "react";
-import { FetchPopularTv } from "../reducers/store/tvReducers/popularTvReducer";
-function PopularCarousel({ loader }) {
+import { FetchTopRatedTv } from "../reducers/store/tvReducers/topRatedTvReducer";
+function TopRatedCarousel({ loader }) {
     const [theMovie, setTheMovie] = useState([])
-    const popular = useSelector((state) => state.popular.movies)
-    const topRated = useSelector((state) => state.topRated.movies)
-    const populartv = useSelector((state) => state.popularTv.movies)
-    console.log(topRated)
-    console.log(populartv)
+    const topRatedMovies= useSelector((state) => state.topRated.movies)
+    const topratedTv=useSelector((state)=>state.topRatedTv.movies)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(
-            FetchPopularTv()
+            FetchTopRatedTv()
         )
     }, [dispatch])
     useEffect(() => {
         dispatch(
-            Popular()
+            FetchTopRated()
         )
     }, [dispatch])
     useEffect(() => {
-        setTheMovie(popular)
+        setTheMovie(topRatedMovies)
         setMovieTitle("MOVIES")
-    }, [popular])
+    }, [topRatedMovies])
     const responsive = {
         superLargeDesktop: {
 
@@ -53,31 +49,31 @@ function PopularCarousel({ loader }) {
     }
     const [moviesTitle, setMovieTitle] = useState("")
     const [activeButton, setActiveButton] = useState('');
-    const handleFetchPopular = (button) => {
+    const handleFetchTopRatedmovie = (button) => {
         setActiveButton(button);
-        const buttons = document.querySelectorAll('.popular-cont .btn');
+        const buttons = document.querySelectorAll('.top-rated-com  .btn');
         console.log(buttons)
         buttons.forEach((btn) => {
-        btn.classList.remove("active")
+            btn.classList.remove("active")
         });
         button.target.classList.add("active")
-        dispatch(Popular())
-        setTheMovie(popular)
+        dispatch((FetchTopRated()))
+        setTheMovie(topRatedMovies)
         setMovieTitle("MOVIES")
     }
-    const handleFetchpopularTv = (button) => {
+    const handleFetchTopRatedTv = (button) => {
         setActiveButton(button);
-        const buttons = document.querySelectorAll('.popular-cont .btn');
+        const buttons = document.querySelectorAll('.top-rated-com  .btn');
         buttons.forEach((btn) => {
             btn.classList.remove("active")
         });
         button.target.classList.add("active")
 
-        setTheMovie(populartv)
+        setTheMovie(topratedTv)
         setMovieTitle("TV ")
     }
     return (
-        <Container fluid className="popular-cont mt-5 " >
+        <Container fluid className="top-rated-com mt-5 " >
             <div className="d-flex tabs-container ">
                 {
                     moviesTitle === "MOVIES" ? <Link to="movies">
@@ -88,12 +84,12 @@ function PopularCarousel({ loader }) {
                         </Link>
                 }
                 <div className="btns-container   m-lg-4 m-2 ">
-                    <Button className="d-flex  animate__animated animate__fadeIn animate__delay-.1s " active={true} onClick={((handleFetchPopular))} >MOVIES </Button>
-                    <Button className="d-flex  animate__animated animate__fadeIn animate__delay-.1s " active={false} onClick={((handleFetchpopularTv))}>TV  </Button>
+                    <Button className="d-flex  animate__animated animate__fadeIn animate__delay-.1s " active={true} onClick={((handleFetchTopRatedmovie))} >MOVIES </Button>
+                    <Button className="d-flex  animate__animated animate__fadeIn animate__delay-.1s " active={false} onClick={((handleFetchTopRatedTv))}>TV  </Button>
                 </div>
             </div>
             <Carousel responsive={responsive}>
-                {
+            {
  moviesTitle === "MOVIES" ?
 
                     theMovie.map((movie) => {
@@ -128,4 +124,4 @@ function PopularCarousel({ loader }) {
     );
 }
 
-export default PopularCarousel;
+export default TopRatedCarousel;
