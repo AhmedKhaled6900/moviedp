@@ -15,8 +15,6 @@ function PopularCarousel({ loader }) {
     const popular = useSelector((state) => state.popular.movies)
     const topRated = useSelector((state) => state.topRated.movies)
     const populartv = useSelector((state) => state.popularTv.movies)
-    console.log(topRated)
-    console.log(populartv)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(
@@ -56,7 +54,6 @@ function PopularCarousel({ loader }) {
     const handleFetchPopular = (button) => {
         setActiveButton(button);
         const buttons = document.querySelectorAll('.popular-cont .btn');
-        console.log(buttons)
         buttons.forEach((btn) => {
         btn.classList.remove("active")
         });
@@ -77,7 +74,7 @@ function PopularCarousel({ loader }) {
         setMovieTitle("TV ")
     }
     return (
-        <Container fluid className="popular-cont mt-5 " >
+        <Container fluid className="popular-cont " >
             <div className="d-flex tabs-container ">
                 {
                     moviesTitle === "MOVIES" ? <Link to="movies">
@@ -92,12 +89,12 @@ function PopularCarousel({ loader }) {
                     <Button className="d-flex  animate__animated animate__fadeIn animate__delay-.1s " active={false} onClick={((handleFetchpopularTv))}>TV  </Button>
                 </div>
             </div>
-            <Carousel responsive={responsive}>
+            <Carousel responsive={responsive}  >
                 {
  moviesTitle === "MOVIES" ?
 
                     theMovie.map((movie) => {
-                        return (<div className="animate__animated animate__fadeIn animate__delay-.5s " key={movie.id} >
+                        return (<div className="animate__animated animate__fadeIn animate__delay-.5s m-2 " key={movie.id} >
                             
                             <Link to={`Moviedetails/${movie.id}`}>
                             <img className="img-fluid" src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
@@ -105,18 +102,18 @@ function PopularCarousel({ loader }) {
                             </Link>
                             
                             {<Link to={`Moviedetails/${movie.id}`}>
-                                <h6 className="p-3"  >{movie.title}</h6>
+                                <h6 className="pt-3 text-center"  >{movie.title}</h6>
                             </Link>}
                         </div>
                         )
                     }):  theMovie.map((movie) => {
-                        return (<div className="animate__animated animate__fadeIn animate__delay-.5s " key={movie.id} >
+                        return (<div className="animate__animated animate__fadeIn animate__delay-.5s m-2 " key={movie.id} >
                             
                             <Link to={`tv/${movie.id}`}>
                             <img className="img-fluid" src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
                           
                             </Link>                            {<Link to={`tv/${movie.id}`}>
-                                <h6 className="p-3"  >{movie.name}</h6>
+                                <h6 className="pt-3 text-center"  >{movie.name}</h6>
                             </Link>}
                         </div>
                         )

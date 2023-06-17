@@ -3,8 +3,14 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useSelector } from 'react-redux';
 
 function ColorSchemesExample() {
+
+  const data=useSelector((state)=>state.Favorite.movies)
+console.log(data)
+const ddd=Array.from(data)
+console.log(ddd.length)
   return (
 <Navbar className='p-3' bg="dark" variant="dark">
   <Link to="/" >
@@ -36,6 +42,13 @@ TOP RATED
 </Link>
 </NavDropdown.Item>
             </NavDropdown>
+            <Link to="favorite"   >
+
+            <Nav.Item  className=' fw-bold  mx-lg-2 text-center  '  >
+        MY FAVORITE   {ddd.length}
+            </Nav.Item>
+            </Link>
+          
           </Nav>
 
       </Navbar>

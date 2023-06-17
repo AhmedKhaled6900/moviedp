@@ -5,7 +5,7 @@ import TopRatedCarousel from "./topRatedCarousel";
 import Loader from "./loader";
 function Home () {
 return(
-    <Container>
+    <Container fluid className="p-0">
 
 <PopularCarousel></PopularCarousel>
 

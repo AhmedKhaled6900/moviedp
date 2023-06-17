@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import  {  createHashRouter,RouterProvider } from "react-router-dom"
 import Root from './layout/root';
@@ -11,6 +10,8 @@ import TopRatedMovies from './layout/topratedcomponent';
 import PopularTvShows from './layout/tvcomponents/popularTvComponent';
 import TopRatedTvShows from './layout/tvcomponents/topRatedTvComponent';
 import TVDetailsComponent from './layout/tvcomponents/tvdetails';
+import Pages from './layout/pages';
+import FavoriteComponent from './layout/favoriteComponent';
 
 
 
@@ -25,6 +26,11 @@ function App() {
       path :"/",
       element: <Home></Home>
       
+    },
+
+    {
+      path:"favorite",
+      element:<FavoriteComponent></FavoriteComponent>
     },
     {
       
@@ -41,7 +47,18 @@ element:<TVDetailsComponent></TVDetailsComponent>
     {
       path :"movies",
       element: <PopularMovies></PopularMovies>,
+     
+      children:[
+        {
+
+            path:"page/:page",
+            element:<Pages></Pages>
+          },
+
+      ]
+  
     },
+  
 
      
 {        path:"topRated",

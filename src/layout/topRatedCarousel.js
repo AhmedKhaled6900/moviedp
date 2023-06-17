@@ -73,14 +73,14 @@ function TopRatedCarousel({ loader }) {
         setMovieTitle("TV ")
     }
     return (
-        <Container fluid className="top-rated-com mt-5 " >
+        <Container fluid className="top-rated-com  " >
             <div className="d-flex tabs-container ">
                 {
                     moviesTitle === "MOVIES" ? <Link to="movies">
-                        <h6 className="f-light m-2 m-lg-4 ">  POPULAR  {moviesTitle}</h6>
+                        <h6 className="f-light m-2 m-lg-4 ">  TOP RATED  {moviesTitle}</h6>
                     </Link>
                         : <Link to="TvShows">
-                            <h6 className="f-light m-lg-4 m-2 ">  POPULAR  {moviesTitle}</h6>
+                            <h6 className="f-light m-lg-4 m-2 "> TOP RATED {moviesTitle}</h6>
                         </Link>
                 }
                 <div className="btns-container   m-lg-4 m-2 ">
@@ -93,7 +93,7 @@ function TopRatedCarousel({ loader }) {
  moviesTitle === "MOVIES" ?
 
                     theMovie.map((movie) => {
-                        return (<div className=" animate__animated animate__fadeIn animate__delay-.5s " key={movie.id} >
+                        return (<div className=" animate__animated animate__fadeIn animate__delay-.5s m-2 " key={movie.id} >
                             
                             <Link to={`Moviedetails/${movie.id}`}>
                             <img className="img-fluid" src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
@@ -101,18 +101,18 @@ function TopRatedCarousel({ loader }) {
                             </Link>
                             
                             {<Link to={`Moviedetails/${movie.id}`}>
-                                <h6 className="p-3"  >{movie.title}</h6>
+                                <h6 className="pt-3 text-center"  >{movie.title}</h6>
                             </Link>}
                         </div>
                         )
                     }):  theMovie.map((movie) => {
-                        return (<div className=" animate__animated animate__fadeIn animate__delay-.5s " key={movie.id} >
+                        return (<div className=" animate__animated animate__fadeIn animate__delay-.5s  m-2 " key={movie.id} >
                             
                             <Link to={`tv/${movie.id}`}>
                             <img className="img-fluid" src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
                           
                             </Link>                            {<Link to={`tv/${movie.id}`}>
-                                <h6 className="p-3"  >{movie.name}</h6>
+                                <h6 className="pt-3 text-center"  >{movie.name}</h6>
                             </Link>}
                         </div>
                         )

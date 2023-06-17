@@ -7,16 +7,12 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import { FetchTopRated } from '../reducers/topRateedReducer';
 import { Link } from 'react-router-dom';
-import CardComponent from './cardcomponent';
-
 function TopRatedMovies() {
-
     const dispath=useDispatch()
     const data =useSelector((state)=>state.topRated.movies)
     useEffect(()=>{
         dispath(FetchTopRated() )
-    },[])
-
+    },[dispath])
     return ( 
 <Container>
 <Row>

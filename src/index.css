@@ -85,10 +85,10 @@ a {
 }
 .popular-cont,
 .top-rated-com{
-  background-color: #222a33;
+  background-color: #247574;
 }
 .top-rated-cont{
-  background-color: #222a33;
+  background-color: #247574;
   
 }
 .popular-cont .btn,
@@ -216,3 +216,18 @@ to{
   height: 100%;
 }
  /*   Loader Component */
+/* pagination*/
+.pagination{
+  background-color: blue;
+  color: black;
+}
+.pagination a{
+  background-color: blue;
+  color: black;
+}
+img{
+  border-radius: 15px;
+}
+h6{
+  margin-bottom: 0;
+}

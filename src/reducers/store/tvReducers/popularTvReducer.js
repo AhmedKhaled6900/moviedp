@@ -23,7 +23,7 @@ const initialState = {
     extraReducers:(builder)=>{
        builder.addCase(FetchPopularTv.fulfilled,(state,action)=>{
            state.movies=action.payload
-           console.log(action.payload)
+          
        })
     }
      })
