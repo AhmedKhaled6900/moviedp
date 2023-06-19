@@ -36,17 +36,17 @@ function PopularMovies() {
                                         <Link to={`/moviedetails/${movie.id}`} >
                                             <img className=' ' src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
                                         </Link>
-                                        <div className='info-container  '>
+                                        <div className='info-container p-0 m-0  '>
 
                                             <div className='cont '>
                                             <Link to={`/moviedetails/${movie.id}`} >
-                                            <h5 className=' '  >{movie.title}</h5>
+                                            <p className='fw-bolder title p-0 m-0 '  >{movie.title}</p>
                                         </Link>
-                                        <p>{movie.release_date}</p>
+                                        <p className='p-0 m-0 '>{movie.release_date}</p>
                                          
-                                        <div className='d-flex justify-content-center '>
-                                            <p className='pe-2'>Votes Average</p>
-                                            <h5   >  {movie.vote_average}
+                                        <div className='d-flex justify-content-center p-0 m-0  '>
+                                            <p className='pe-2 p-0 m-0 '>Votes</p>
+                                            <h5 className='p-0 m-0 title '  >  {movie.vote_average}
                                             </h5>
                                         </div>
                                         {
