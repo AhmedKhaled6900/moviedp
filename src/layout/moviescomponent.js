@@ -37,12 +37,14 @@ function PopularMovies() {
                                             <img className=' ' src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
                                         </Link>
                                         <div className='info-container  '>
-                                        <Link to={`/moviedetails/${movie.id}`} >
+
+                                            <div className='cont '>
+                                            <Link to={`/moviedetails/${movie.id}`} >
                                             <h5 className=' '  >{movie.title}</h5>
                                         </Link>
                                         <p>{movie.release_date}</p>
                                          
-                                        <div className='d-flex '>
+                                        <div className='d-flex justify-content-center '>
                                             <p className='pe-2'>Votes Average</p>
                                             <h5   >  {movie.vote_average}
                                             </h5>
@@ -56,6 +58,8 @@ function PopularMovies() {
                                                     handleaddtofav(movie)
                                                 }}  > add to fav </Button>
                                         }
+                                            </div>
+                                   
                                     </div>
                                  
                                         </div>
