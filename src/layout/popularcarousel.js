@@ -74,8 +74,8 @@ function PopularCarousel({ loader }) {
         setMovieTitle("TV ")
     }
     return (
-        <Container fluid className="popular-cont " >
-            <div className="d-flex tabs-container ">
+        <Container fluid className="popular-cont p-0 " >
+            <div className="d-flex tabs-container  ">
                 {
                     moviesTitle === "MOVIES" ? <Link to="movies">
                         <h6 className="f-light m-2 m-lg-4 ">  POPULAR  {moviesTitle}</h6>

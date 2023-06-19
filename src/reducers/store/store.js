@@ -6,7 +6,8 @@ import  FetchPopularTv   from "./tvReducers/popularTvReducer";
 import  FetchTopRatedTv  from "./tvReducers/topRatedTvReducer";
 import  FetchTvDetails  from "./tvReducers/tvdetailsreducer";
 import  FetcPagination  from "./tvReducers/paginationReducer";
-import       Favorite    from "./addFavoriteRducer";
+import   Favorite    from "./addFavoriteRducer";
+import   reFavorite     from "./addFavoriteRducer";
 // import addFavoriteRducer from "./addFavoriteRducer";
 // import    addToFavorite   from "./addFavoriteRducer";
 
@@ -19,7 +20,8 @@ export default configureStore({
         topRatedTv :FetchTopRatedTv,
         tvDetails :FetchTvDetails,
         popularpages:FetchPopularPages,
-        Favorite : Favorite
+        Favorite : Favorite,
+        reFavorite:reFavorite
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 })

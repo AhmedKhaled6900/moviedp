@@ -70,8 +70,25 @@ color: rgba(255, 255, 255, 0.55);}
   border-radius: 10px;
 }
 .info-container{
-  min-height: 100%;
   border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000b5;
+  height: 0%;
+  width: 100%;
+  overflow: hidden;
+  transition: .5s;
+
+
+}
+.img-cont:hover .info-container{
+  height: 100%;
+}
+
+.img-cont{
+  position: relative;
+ 
 }
 a {
   text-decoration: none !important;
@@ -231,3 +248,24 @@ img{
 h6{
   margin-bottom: 0;
 }
+.tabs-container{
+  background-image: url("./imgs/bg.png");
+  background-color: black;
+}
+
+
+.no-movies{
+height: calc(100vh - 72px) ;
+position: relative;
+}
+.no-moviestext{
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  width: 100%;
+}
+.no-moviestext h1{
+  color: wheat;
+}
+

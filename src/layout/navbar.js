@@ -44,8 +44,8 @@ TOP RATED
             </NavDropdown>
             <Link to="favorite"   >
 
-            <Nav.Item  className=' fw-bold  mx-lg-2 text-center  '  >
-        MY FAVORITE   {ddd.length}
+            <Nav.Item  className=' fw-bold  mx-lg-2 p-2 text-center  '  >
+        MY FAVORITE {ddd.length}
             </Nav.Item>
             </Link>
           

@@ -7,24 +7,19 @@ const initialState = {
     error: ``,
     totalPages: 0
   }
-
   const FavoriteSlice=createSlice({
     name:"Favorite",
     initialState,
     reducers:{
-      Favorite  :(state,action)=>{
+      Favorite:(state,action)=>{
         state.movies.push(action.payload)
-
         console.log(action.payload)
+      },
+      reFavorite:(state,action)=>{
+        const index = state.movies.findIndex((item)=>item.id === action.payload.id)
+          state.movies.splice(index,1)
       }
-
     }
-    // extraReducers:(builder)=>{
-    //    builder.addCase(PostFavorite.fulfilled,(state,action)=>{
-    //        state.movies=action.payload
-    //        console.log(action.payload)
-    //    })
-    // }
      })
      export default FavoriteSlice.reducer
-     export const {Favorite} = FavoriteSlice.actions
+     export const {Favorite,reFavorite} = FavoriteSlice.actions

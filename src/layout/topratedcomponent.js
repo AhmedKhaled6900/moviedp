@@ -5,19 +5,33 @@ import { useDispatch, useSelector } from 'react-redux';
 import Container from 'react-bootstrap/esm/Container';
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import { FetchTopRated } from '../reducers/topRateedReducer';
-import { Link } from 'react-router-dom';
+import  {FetchTopRated}  from '../reducers/topRateedReducer';
+import { Link, useNavigate } from 'react-router-dom';
+import  {Favorite}  from '../reducers/store/addFavoriteRducer';
+import Helper from './helper';
 function TopRatedMovies() {
-    const dispath=useDispatch()
+    const navigate=useNavigate()
+    const dispatch=useDispatch()
     const data =useSelector((state)=>state.topRated.movies)
+    const theFavorite =useSelector((state)=>state.Favorite.movies )
+console.log(theFavorite)
+
+    const handleaddtofav = (movie) => {
+        dispatch(Favorite(movie))
+    }
     useEffect(()=>{
-        dispath(FetchTopRated() )
-    },[dispath])
+        dispatch(FetchTopRated() )
+    },[dispatch])
+
+
+
     return ( 
 <Container>
 <Row>
     {
         data.map((movie)=>{
+           
+
 return (
 
 
@@ -41,7 +55,26 @@ return (
     <h5   >  {movie.vote_average}
 </h5> 
         </div>
+
+         {
+    theFavorite.find(element => element.id === movie.id) ?
+     <Button onClick={() => { navigate(`/favorite`) }}
+ > fav </Button>
+ :
+  <Button onClick={() => {
+       handleaddtofav(movie)
+}}  > add to fav </Button>
+  } 
+  
+
+
+
+  {/* <Helper movie={movie} ></Helper> */}
+
     </div>
+
+
+  
     </div>
     </Col>
 

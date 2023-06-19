@@ -73,7 +73,7 @@ function TopRatedCarousel({ loader }) {
         setMovieTitle("TV ")
     }
     return (
-        <Container fluid className="top-rated-com  " >
+        <Container fluid className="top-rated-com p-0  " >
             <div className="d-flex tabs-container ">
                 {
                     moviesTitle === "MOVIES" ? <Link to="movies">
