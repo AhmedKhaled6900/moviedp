@@ -29,12 +29,12 @@ function TopRatedTvShows() {
                             <Col lg={3} className='gap-1 mb-2 col-6' key={movie.id}>
                                 <div className='row card-container  m-2' >
                                         <div className='img-cont p-0' > 
-                                        <Link to={`/moviedetails/${movie.id}`} >
+                                        <Link to={`/tv/${movie.id}`} >
                                             <img className=' ' src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
                                         </Link>
                                         <div className='info-container p-0 m-0  '>
                                             <div className='cont '>
-                                            <Link to={`/moviedetails/${movie.id}`} >
+                                            <Link to={`/tv/${movie.id}`} >
                                             <p className='fw-bolder title p-0 m-0 '  >{movie.name}</p>
                                         </Link>
                                         <p className='p-0 m-0 '>{movie.first_air_date}</p>                                        

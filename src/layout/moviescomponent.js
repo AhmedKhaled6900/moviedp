@@ -63,7 +63,7 @@ function PopularMovies() {
                         )
                     })
                 }
-                <div className="col ">
+                {/* <div className="col ">
                     <ReactPaginate
                         breakLabel="...."
                         nextLabel="next >"
@@ -85,7 +85,7 @@ function PopularMovies() {
                         //   initialPage={}
                         disableInitialCallback={false}
                     />
-                </div>
+                </div> */}
                 {/* <div className="btn" onClick={loadmore} > load more</div> */}
             </Row>
         </Container>

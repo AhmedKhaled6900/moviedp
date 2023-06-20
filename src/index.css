@@ -30,16 +30,32 @@ width: 100%;
 opacity: .3;
 }
 .poster{
-  height: calc(100vh - 89px);
+  height: calc(100vh - 64px);
 }
+.offcanvas-body{
+  background-color: #282c34;
+  text-align: center
+  ;
 
+}
 .backdrop{
   width: 100%;
+  height: 300px;
+}
+
+.backdrop img{
+  max-width: 100%;
+  height: 100%
 }
 .lay-con{
   background-repeat: round;
   background-size: cover;
-  height: calc(100vh - 72px);
+  height: calc(100vh - 56px);
+}
+
+.over-large{
+  color: white;
+  z-index: 5;
 }
 .lay{
   position: absolute;
@@ -267,7 +283,7 @@ h6{
 
 
 .no-movies{
-height: calc(100vh - 72px) ;
+height: calc(100vh - 56px) ;
 position: relative;
 }
 .no-moviestext{

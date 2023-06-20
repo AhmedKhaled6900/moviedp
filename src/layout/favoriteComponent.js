@@ -22,15 +22,11 @@ const nodata=Array.from(data)
 const handledelete=(movie)=>{
 dispatch(reFavorite(movie))
 }
-
-// const addMovieToFavorites = () => {
-//     setAddedAt(luxon.DateTime.now());
-//   };
 const now = DateTime.now();
 
 const [time, setTime] = useState(now.toLocaleString());
     return ( 
-        <Container>
+        <Container className='h-100v'>
             <Row>
                 { nodata.length === 0? 
                 <div className='no-movies text-center ' >
@@ -38,15 +34,12 @@ const [time, setTime] = useState(now.toLocaleString());
                 <h1> NO MOVIES  </h1>
                     <h3> ADD YOUR FAVORITE MOVIES <br /> TO BE SHOWN HERE </h3>
                 </div>
- {/* <div className=' no-moviestext ' >
-                <h1> NO MORE MOVIES  </h1>
-                    <h3> ADD YOUR FAVORITE MOVIES <br /> TO BE SHOWN HERE </h3>
-                </div> */}
+ 
                 </div>
                 :
                     data.map((movie) => {
                         return (
-                                <Col lg={3} className='gap-1 mb-2' key={movie.id}>
+                                <Col lg={3} className='gap-1 mb-2 ' key={movie.id}>
                                 <div className='row card-container  m-2' >
                                     <div className='col-4  col-lg-12   p-0' >
                                         <Link to={`/moviedetails/${movie.id}`} >

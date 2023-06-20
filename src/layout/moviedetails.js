@@ -31,22 +31,27 @@ const loading=useSelector((state)=>state.details.loading)
                     backgroundImage: `url("https://image.tmdb.org/t/p/w500/${data.poster_path}  " )`,
                 }}
             >
-                <Row className="pt-5 w-100">
+                <Row className=" p-3 p-lg-5 w-100">
                     <Col className="col-6 z-2  animate__animated animate__fadeIn animate__delay-1s ">
                         <div className="backdrop">
                             <img
-                                className="img-fluid"
+                                className=""
                                 src={`https://image.tmdb.org/t/p/w500/` + data.backdrop_path}
                                 alt=""
                             />
                         </div>
                     </Col>
-                    <Col className="col-6 z-2">
+                    <Col className="col-6 z-2 pt-3 ">
                         <div className="details">
                             <h5> {data.title}</h5>
                             <p> {data.release_date} </p>
                             <h6> {data.popularity} </h6>
+                            <p className="d-none d-lg-flex ">{data.overview}</p>
                         </div>
+                    </Col>
+                    <Col className="z-3">
+                    <p className=" pt-3 d-block d-lg-none over-large">{data.overview}</p>
+                    
                     </Col>
                 </Row>
                 <div className="lay "></div>
