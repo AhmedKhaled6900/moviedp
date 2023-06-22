@@ -16,6 +16,16 @@ export const FetchPopularPages = createAsyncThunk("popular/popularpages",async(p
     })
 })
 
+export const search = createAsyncThunk("search/allsearch",async(keyword)=>{
+    return  axios.get(`https://api.themoviedb.org/3/search/movie?api_key=739517d93a0252fbc4ca80b8cf937f64&language=en-US&page=1&query=${keyword}`
+
+    )
+
+    .then((res)=>{
+        return res.data
+    })
+})
+
 
 const initialState = {
     loading: false,
@@ -39,6 +49,13 @@ const initialState = {
         state.totalPages=action.payload.total_pages
           
        })
+
+   
+        builder.addCase(search.fulfilled,(state,action)=>{
+            state.movies = action.payload.results
+            console.log(action.payload)
+        })
+
     }
      })
      export default PopularSlice.reducer

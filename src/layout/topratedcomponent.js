@@ -31,7 +31,7 @@ console.log(theFavorite)
 {
                     data.map((movie) => {
                         return (
-                            <Col lg={3} className='gap-1 mb-2 col-6' key={movie.id}>
+                            <Col lg={3} className='gap-1 mb-2 col-6 p-0' key={movie.id}>
                                 <div className='row card-container  m-2' >
                                         <div className='img-cont p-0' > 
                                         <Link to={`/moviedetails/${movie.id}`} >

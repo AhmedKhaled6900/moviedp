@@ -1,13 +1,17 @@
 import { applyMiddleware, combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";import FetchTopRated from "../topRateedReducer"
 import  MovieDetails  from "./detailsreducer";
-import Popular  from "./popularreducer";
+import Popular from "./popularreducer";
+
+import  search   from "./popularreducer";
 import   FetchPopularPages   from "./popularreducer";
 import  FetchPopularTv   from "./tvReducers/popularTvReducer";
 import  FetchTopRatedTv  from "./tvReducers/topRatedTvReducer";
 import  FetchTvDetails  from "./tvReducers/tvdetailsreducer";
-import  FetcPagination  from "./tvReducers/paginationReducer";
+
 import   Favorite    from "./addFavoriteRducer";
 import   reFavorite     from "./addFavoriteRducer";
+
+// import search  from "./searchReducer";
 // import addFavoriteRducer from "./addFavoriteRducer";
 // import    addToFavorite   from "./addFavoriteRducer";
 
@@ -21,7 +25,8 @@ export default configureStore({
         tvDetails :FetchTvDetails,
         popularpages:FetchPopularPages,
         Favorite : Favorite,
-        reFavorite:reFavorite
+        reFavorite:reFavorite,
+        allsearch:search
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 })

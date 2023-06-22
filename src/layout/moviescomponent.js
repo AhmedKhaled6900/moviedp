@@ -1,35 +1,68 @@
 import ReactPaginate from 'react-paginate';
+
+import Form from 'react-bootstrap/Form';
+
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { FetchPopularPages, Popular } from '../reducers/store/popularreducer';
+import { FetchPopularPages, Popular, search } from '../reducers/store/popularreducer';
 import Container from 'react-bootstrap/esm/Container';
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { Favorite } from '../reducers/store/addFavoriteRducer';
 import { Button } from '@mui/material';
+
 function PopularMovies() {
     const dispatch = useDispatch()
     const data = useSelector((state) => state.popular.movies)
-    const pages = useSelector((state) => state.popular.totalPages)
+
     const theFavorite = useSelector((state) => state.Favorite.movies)
+
+
     const navigate = useNavigate()
     const [page, setPage] = useState(1)
     useEffect(() => {
         dispatch(Popular())
         dispatch(FetchPopularPages(page))
+     
+
     }, [dispatch, page])
-   
-    const handleaddtofav = (movie) => {
-        dispatch(Favorite(movie))
-    }
+
+
+    const handlesearch=(keyword)=>{
+        (keyword) === "" ? dispatch(Popular()):
+
+        dispatch(search(keyword))
+            }
+
+//    useEffect((keyword)=>{
+//     dispatch(search(keyword))
+//    },[dispatch])
+   const handleaddtofav = (movie) => {
+    dispatch(Favorite(movie))
+}
     return (
         <Container>
+
+       
+    
             <Row>
+
+            <div>
+  <Form className="d-flex">
+            <Form.Control onChange={ (e)=>handlesearch(e.target.value)}
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
+    </div>
                 {
                     data.map((movie) => {
                         return (
-                            <Col lg={3} className='gap-1 mb-2 col-6' key={movie.id}>
+                            <Col lg={3} className='gap-1 mb-2 col-6 p-0 ' key={movie.id}>
                                 <div className='row card-container  m-2' >
                                         <div className='img-cont p-0' > 
                                         <Link to={`/moviedetails/${movie.id}`} >
