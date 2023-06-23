@@ -15,10 +15,7 @@ import { Button } from '@mui/material';
 function PopularMovies() {
     const dispatch = useDispatch()
     const data = useSelector((state) => state.popular.movies)
-
     const theFavorite = useSelector((state) => state.Favorite.movies)
-
-
     const navigate = useNavigate()
     const [page, setPage] = useState(1)
     useEffect(() => {
@@ -43,9 +40,6 @@ function PopularMovies() {
 }
     return (
         <Container>
-
-       
-    
             <Row>
 
             <div>

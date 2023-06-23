@@ -10,6 +10,9 @@ import  FetchTvDetails  from "./tvReducers/tvdetailsreducer";
 
 import   Favorite    from "./addFavoriteRducer";
 import   reFavorite     from "./addFavoriteRducer";
+import  searchAll  from "./searchReducer";
+import  searchMovies  from "./searchReducer";
+import  searchTv  from "./searchReducer";
 
 // import search  from "./searchReducer";
 // import addFavoriteRducer from "./addFavoriteRducer";
@@ -26,7 +29,10 @@ export default configureStore({
         popularpages:FetchPopularPages,
         Favorite : Favorite,
         reFavorite:reFavorite,
-        allsearch:search
+        allsearch:search,
+        searchall:searchAll,
+        searchamovies:searchMovies,
+        searchatv:searchTv,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 })

@@ -12,6 +12,7 @@ import TopRatedTvShows from './layout/tvcomponents/topRatedTvComponent';
 import TVDetailsComponent from './layout/tvcomponents/tvdetails';
 import Pages from './layout/pages';
 import FavoriteComponent from './layout/favoriteComponent';
+import Searchall from './layout/searchall';
 
 
 
@@ -24,7 +25,12 @@ function App() {
   children:[
     {
       path :"/",
-      element: <Home></Home>
+      element: <Home></Home>,
+      children:[
+{        path:"search",
+element:  <Searchall></Searchall>
+}        
+      ]
       
     },
 
