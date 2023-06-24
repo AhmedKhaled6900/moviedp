@@ -79,16 +79,16 @@ if(tit==="tv"){
           <Form className="d-flex">
             <Form.Control onChange={(e) => handlesearch(e.target.value)}
               type="search"
-              placeholder="Search"
+              placeholder="Search For Movie Or Tv Show "
               className="me-2"
               aria-label="Search"
             />
           </Form>
           <div>
-          <ButtonGroup variant="outlined" aria-label="outlined button group">
-  <Button onClick={()=>setTit("all")}>all</Button>
-  <Button onClick={()=>setTit("movies")}  >movies</Button>
-  <Button onClick={()=>setTit("tv")}  >tv</Button>
+          <ButtonGroup variant="outlined" aria-label="outlined button group" className='mt-2'   >
+  <Button style={{color:"white",borderColor:"white",outlineColor:"white"}} onClick={()=>setTit("all")}>all</Button>
+  <Button style={{color:"white",borderColor:"white",outlineColor:"white"}} onClick={()=>setTit("movies")}  >movies</Button>
+  <Button style={{color:"white",borderColor:"white",outlineColor:"white"}} onClick={()=>setTit("tv")}  >tv</Button>
 </ButtonGroup>
           </div>
         </div>
@@ -103,33 +103,89 @@ if(tit==="tv"){
       return (
         <Col lg={3} className='gap-1 mb-2 col-6 p-0  animate__animated animate__fadeIn animate__delay-.5s' key={movie.id}>
           <div className='row card-container  m-2' >
-            <div className='img-cont p-0' >
-              <Link to={`/moviedetails/${movie.id}`} >
-                <img className=' ' src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
-              </Link>
-              <div className='info-container p-0 m-0  '>
+        
+{
+  movie.media_type==="tv"&&  
+  <div className='img-cont p-0' >
+  <Link to={`/tv/${movie.id}`} >
+  <img className=' ' src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
+</Link>
+<div className='info-container p-0 m-0  '>
                 <div className='cont '>
-                  <Link to={`/moviedetails/${movie.id}`} >
-                    <p className='fw-bolder title p-0 m-0 '  >{movie.title}</p>
+                  <Link to={`/tv/${movie.id}`} >
+                    <p className='fw-bolder title p-0 m-0 '  >{movie.name}</p>
                   </Link>
-                  <p className='p-0 m-0 '>{movie.release_date}</p>
+                  <p className='p-0 m-0 '>{movie.first_air_date}</p>
                   <div className='d-flex justify-content-center p-0 m-0  '>
                     <p className='pe-2 p-0 m-0 '>Votes</p>
                     <h5 className='p-0 m-0 title '  >  {movie.vote_average}
                     </h5>
                   </div>
-                  {/* {
-                    theFavorite.find(element => element.id === movie.id) ?
-                      <Button className='mt-2' variant="contained" onClick={() => { navigate(`/favorite`) }}
-                      > fav </Button>
-                      :
-                      <Button className='mt-2' variant="contained" onClick={() => {
-                        handleaddtofav(movie)
-                      }}  > add to fav </Button>
-                  } */}
+                  <p> { movie.media_type} </p>
                 </div>
-              </div>                                                                         </div>
-          </div>
+              </div> 
+  </div>
+}
+{
+ movie.media_type==="movie"&& 
+ <div className='img-cont p-0' >
+ <Link to={`/moviedetails/${movie.id}`} >
+   <img className=' ' src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
+ </Link>
+ <div className='info-container p-0 m-0  '>
+   <div className='cont '>
+     {
+     }
+     <Link to={`/moviedetails/${movie.id}`} >
+       <p className='fw-bolder title p-0 m-0 '  >{movie.title}{movie.name}</p>
+     </Link>
+     <p className='p-0 m-0 '>{movie.release_date}</p>
+     <div className='d-flex justify-content-center p-0 m-0  '>
+       <p className='pe-2 p-0 m-0 '>Votes</p>
+       <h5 className='p-0 m-0 title '  >  {movie.vote_average}
+       </h5>
+     </div>
+     <p> { movie.media_type} </p>
+   </div>
+ </div>                                                                        
+ </div>   
+}
+       {
+         movie.media_type=== undefined&&
+
+         <div className='img-cont p-0' >
+         <Link to={`/moviedetails/${movie.id}`} >
+           <img className=' ' src={`https://image.tmdb.org/t/p/w500/` + movie.poster_path} alt="" />
+         </Link>
+         <div className='info-container p-0 m-0  '>
+           <div className='cont '>
+             {
+             }
+             <Link to={`/moviedetails/${movie.id}`} >
+               <p className='fw-bolder title p-0 m-0 '  >{movie.title}{movie.name}</p>
+             </Link>
+             <p className='p-0 m-0 '>{movie.release_date}  {movie.first_air_date
+}</p>
+             <div className='d-flex justify-content-center p-0 m-0  '>
+               <p className='pe-2 p-0 m-0 '>Votes</p>
+               <h5 className='p-0 m-0 title '  >  {movie.vote_average}
+               </h5>
+             </div>
+             <p> { movie.media_type} </p>
+           </div>
+         </div>                                                                        
+         </div>  
+
+       }                                                              
+              
+
+
+
+              {/* {
+                movie.media_type=="movie"
+              } */}
+               </div>
+      
         </Col>
   
       )
