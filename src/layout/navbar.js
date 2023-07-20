@@ -12,7 +12,7 @@ function ColorSchemesExample() {
 const navigate=useNavigate()
   const dispatch=useDispatch()
   useEffect(()=>{
-    localStorage.setItem("idauth","false")
+    localStorage.setItem("isauth","false")
   },[])
 
 const isauth=localStorage.getItem("isauth")
