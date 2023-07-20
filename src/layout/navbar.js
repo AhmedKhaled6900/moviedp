@@ -5,12 +5,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { logoutuser } from '../reducers/loginreducer/loginreducer';
 
 function ColorSchemesExample() {
 const navigate=useNavigate()
   const dispatch=useDispatch()
+  useEffect(()=>{
+    localStorage.setItem("idauth","false")
+  },[])
 
 const isauth=localStorage.getItem("isauth")
   const data=useSelector((state)=>state.Favorite.movies)
