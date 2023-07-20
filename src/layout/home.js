@@ -7,7 +7,8 @@ import { Popular, search } from "../reducers/store/popularreducer";
 import { Link, Outlet } from "react-router-dom";
 import { searchTv } from "../reducers/store/searchReducer";
 
-function Home () {
+function Home ({auth}) {
+    const authe={auth} 
 const data=useSelector((state)=>state.searchall.movies)
 console.log (data)
     const dispatch = useDispatch()

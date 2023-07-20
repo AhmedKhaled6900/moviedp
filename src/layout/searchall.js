@@ -60,16 +60,7 @@ if(tit==="tv"){
     }
 
     
-    
-    // else if 
-    //   ( 
-    //  tit==="movies"    ( dispatch(searchMovies(keyword)))
-    //   )
-    // else if 
-    //   ( 
-    //  tit==="movies"    ( dispatch(searchMovies(keyword)))
-    //   )
-
+  
     
   
   return (

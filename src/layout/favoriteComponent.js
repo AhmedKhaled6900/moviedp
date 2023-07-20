@@ -7,12 +7,25 @@ import { PostFavorite, reFavorite } from '../reducers/store/addFavoriteRducer';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
-import { Link } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/esm/Button';
-
+import { redirect } from "react-router-dom";
 
 function FavoriteComponent() {
+    // const isauth=useSelector((state)=>state.login)
+    // const [auth,setAuth]=useState()
+    const isauth=localStorage.getItem("isauth")
 
+const navigate=useNavigate()
+useEffect(()=>{
+   
+
+    if ( isauth==="false")
+{    navigate("/")}
+    
+},[])
+ 
+// console.log(isauth)
 const data=useSelector((state)=>state.Favorite.movies)
 const dispatch=useDispatch()
 const [addedAt, setAddedAt] = useState(null);

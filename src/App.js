@@ -13,16 +13,28 @@ import TVDetailsComponent from './layout/tvcomponents/tvdetails';
 import Pages from './layout/pages';
 import FavoriteComponent from './layout/favoriteComponent';
 import Searchall from './layout/searchall';
+import Signup from './layout/forms/signup';
+import Login from './layout/forms/login';
 
 
 
 function App() {
-
   const router= createHashRouter([
 {
   path:"/",
   element:<Root></Root>,
   children:[
+
+    {
+path:"signup",
+element:<Signup></Signup>
+
+    },
+    {
+path:"login",
+element:<Login  ></Login>
+
+    },
     {
       path :"/",
       element: <Home></Home>,

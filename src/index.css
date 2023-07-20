@@ -297,3 +297,30 @@ position: relative;
   color: wheat;
 }
 
+form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  color: white;
+}
+ form p{
+  color: red;
+  padding: 0;
+  margin: 0;
+  text-align: start;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="channel"],
+input[type="password"]
+{
+  display: block;
+  width: 400px;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  /* margin-bottom: 20px; */
+
+}

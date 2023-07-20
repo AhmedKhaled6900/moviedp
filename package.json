@@ -15,12 +15,14 @@
         "animate.css": "^4.1.1",
         "axios": "^1.4.0",
         "bootstrap": "^5.3.0",
+        "fs": "^0.0.1-security",
         "full-icu": "^1.5.0",
         "luxon": "^3.3.0",
         "mdb-react-ui-kit": "^6.1.0",
         "react": "^18.2.0",
         "react-bootstrap": "^2.7.4",
         "react-dom": "^18.2.0",
+        "react-hook-form": "^7.45.1",
         "react-multi-carousel": "^2.8.4",
         "react-paginate": "^8.2.0",
         "react-redux": "^8.0.7",
@@ -55,6 +57,7 @@
         ]
     },
     "devDependencies": {
+        "@hookform/devtools": "^4.3.1",
         "gh-pages": "^5.0.0"
     }
 }

@@ -13,6 +13,9 @@ import   reFavorite     from "./addFavoriteRducer";
 import  searchAll  from "./searchReducer";
 import  searchMovies  from "./searchReducer";
 import  searchTv  from "./searchReducer";
+import    loginuser    from "../loginreducer/loginreducer";
+// import  loginSuccess  from "../loginreducer/loginreducer";
+// import loginreducer from "../loginreducer/loginreducer";
 
 // import search  from "./searchReducer";
 // import addFavoriteRducer from "./addFavoriteRducer";
@@ -33,6 +36,8 @@ export default configureStore({
         searchall:searchAll,
         searchamovies:searchMovies,
         searchatv:searchTv,
+        // authentication:loginSuccess
+        login:loginuser
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
 })
