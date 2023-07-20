@@ -39,7 +39,7 @@ function Login(){
             .then((res) => checkpassword(res.data, formData))
         if (username&&userpassword) {
             // alert("username and password are correct  ")
-         localStorage.setItem("isauth","true")
+        //  localStorage.setItem("isauth","true")
          navigate("/",{replce:true})
 
     //    return  dispatch(loginuser())
