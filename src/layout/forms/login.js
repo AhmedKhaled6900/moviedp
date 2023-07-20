@@ -56,11 +56,11 @@ function Login(){
         
       <Container>
 
-<form action="" onSubmit={handleSubmit(onSubmit)} noValidate auth={auth} >
-                    <div>
+<form  action="" onSubmit={handleSubmit(onSubmit)} noValidate auth={auth} >
+                    <div className="">
                         <label htmlFor="username"> UserName   <p className="">{errors.username?.message}</p></label>
                         {/* add the required field validation to the username field pass object as second arg to the register function spicefie requiered as key and error message */}
-                        <input type="text" id="username"
+                        <input className="" type="text" id="username"
                             onChange={(e) => {
                                 setUsername(e.target.value);
                             }}
