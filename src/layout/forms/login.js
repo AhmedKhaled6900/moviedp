@@ -40,7 +40,7 @@ function Login(){
         if (username&&userpassword) {
             // alert("username and password are correct  ")
          localStorage.setItem("isauth",true)
-         navigate("/")
+         navigate("/",{replce:true})
 
     //    return  dispatch(loginuser())
         
