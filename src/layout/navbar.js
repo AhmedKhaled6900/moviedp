@@ -63,7 +63,7 @@ TOP RATED
 </Link>
 </NavDropdown.Item>
             </NavDropdown>
-{     isauth ==="true" &&        <Link to="favorite"   >
+{        <Link to="favorite"   >
             <Nav.Item  className=' fw-bold  mx-lg-2 p-2 text-center  '  >
        FAVORITE {ddd.length}
             </Nav.Item>

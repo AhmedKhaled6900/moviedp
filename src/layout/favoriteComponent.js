@@ -16,14 +16,14 @@ function FavoriteComponent() {
     // const [auth,setAuth]=useState()
     const isauth=localStorage.getItem("isauth")
 
-const navigate=useNavigate()
-useEffect(()=>{
+// const navigate=useNavigate()
+// useEffect(()=>{
    
 
-    if ( isauth==="false")
-{    navigate("/")}
+//     if ( isauth==="false")
+// {    navigate("/")}
     
-},[])
+// },[])
  
 // console.log(isauth)
 const data=useSelector((state)=>state.Favorite.movies)
