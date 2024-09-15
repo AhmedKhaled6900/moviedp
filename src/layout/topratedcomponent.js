@@ -8,7 +8,6 @@ import Col from "react-bootstrap/esm/Col";
 import  {FetchTopRated}  from '../reducers/topRateedReducer';
 import { Link, useNavigate } from 'react-router-dom';
 import  {Favorite}  from '../reducers/store/addFavoriteRducer';
-import Helper from './helper';
 function TopRatedMovies() {
     const navigate=useNavigate()
     const dispatch=useDispatch()

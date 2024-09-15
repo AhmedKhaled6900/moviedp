@@ -3,8 +3,6 @@ import  {  createHashRouter,RouterProvider } from "react-router-dom"
 import Root from './layout/root';
 import DetailsComponent from "./layout/moviedetails"
 import PopularMovies from './layout/moviescomponent';
-import PopularCarousel from './layout/popularcarousel';
-import LayCarousel from './layout/carousel';
 import Home from './layout/home';
 import TopRatedMovies from './layout/topratedcomponent';
 import PopularTvShows from './layout/tvcomponents/popularTvComponent';
@@ -13,10 +11,6 @@ import TVDetailsComponent from './layout/tvcomponents/tvdetails';
 import Pages from './layout/pages';
 import FavoriteComponent from './layout/favoriteComponent';
 import Searchall from './layout/searchall';
-import Signup from './layout/forms/signup';
-import Login from './layout/forms/login';
-
-
 
 function App() {
   const router= createHashRouter([
@@ -24,17 +18,6 @@ function App() {
   path:"/",
   element:<Root></Root>,
   children:[
-
-    {
-path:"signup",
-element:<Signup></Signup>
-
-    },
-    {
-path:"login",
-element:<Login  ></Login>
-
-    },
     {
       path :"/",
       element: <Home></Home>,
@@ -97,10 +80,7 @@ element:<TopRatedMovies></TopRatedMovies>
 },
 
 
-// {
-//   path:"Moviedetails/:id",
-//   element:<DetailsComponent></DetailsComponent>
-// }
+
   ])
   return (
 
